@@ -1,0 +1,137 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  color: white;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Night background */
+.night {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 1) 100%);
+  z-index: -1;
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+.star:nth-child(1) { width: 2px; height: 2px; top: 10%; left: 20%; animation-delay: 0s; }
+.star:nth-child(2) { width: 3px; height: 3px; top: 20%; left: 80%; animation-delay: 0.5s; }
+.star:nth-child(3) { width: 1px; height: 1px; top: 30%; left: 50%; animation-delay: 1s; }
+.star:nth-child(4) { width: 2px; height: 2px; top: 40%; left: 10%; animation-delay: 1.5s; }
+.star:nth-child(5) { width: 3px; height: 3px; top: 50%; left: 90%; animation-delay: 2s; }
+.star:nth-child(6) { width: 1px; height: 1px; top: 60%; left: 30%; animation-delay: 0.3s; }
+.star:nth-child(7) { width: 2px; height: 2px; top: 70%; left: 70%; animation-delay: 0.8s; }
+.star:nth-child(8) { width: 3px; height: 3px; top: 80%; left: 40%; animation-delay: 1.2s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Planets */
+.planet {
+  position: absolute;
+  border-radius: 50%;
+  animation: orbit 10s linear infinite;
+}
+
+.planet:nth-child(1) {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #ffcc00, #ff6600);
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.planet:nth-child(2) {
+  width: 30px;
+  height: 30px;
+  background: radial-gradient(circle, #00aaff, #005577);
+  top: 60%;
+  right: 15%;
+  animation-delay: 3s;
+}
+
+.planet:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #ff6699, #cc3366);
+  bottom: 20%;
+  left: 70%;
+  animation-delay: 6s;
+}
+
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+}
+
+/* Love hearts */
+.heart {
+  position: absolute;
+  color: #ff69b4;
+  font-size: 24px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.heart:nth-child(1) { top: 15%; left: 60%; animation-delay: 0s; }
+.heart:nth-child(2) { top: 35%; right: 20%; animation-delay: 1s; }
+.heart:nth-child(3) { bottom: 25%; left: 25%; animation-delay: 2s; }
+.heart:nth-child(4) { top: 55%; left: 45%; animation-delay: 3s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* Title */
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.sparkle {
+  margin-right: 8px;
+}
